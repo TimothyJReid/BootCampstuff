@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim's Profile</title>
+    <style>
+        body {
+            background-image: url('images/background.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;            
+        }
+        h1 {
+            font-size: 150px;
+            color: white;
+            text-shadow: 2px 2px lightgray;
+            
+        }
+        #Nucamp {
+            font-size: 25px;
+        }
+    
+
+.images-selector input {
+  position: absolute;
+  z-index: 10;
+}
+
+.images-selector input:checked + .img-card {
+  filter: none;
+  transform: scaleY(1);
+}
+
+.img-card {
+  display: inline-block;
+  width: 250px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+  filter: grayscale(1) opacity(.5);
+}
+
+.img-card:hover {
+  filter: grayscale(0) opacity(1);
+/*   box-shadow:  0px 8px 4px rgba(0, 0, 0, 0.3),
+               0px 10px 2px rgba(0, 0, 0, 0.1); */
+}
+
+.img-card::before,
+.img-card::after {
+  transform: scaleY(-);
+}
+
+/*reflection*/
+.img-card:hover::after {
+  content: '';
+  background-image: inherit;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  width: inherit;
+  height: 40%;
+  position: absolute;
+  bottom: -25%;
+}
+
+/*fade reflection*/
+.img-card:hover::before {
+  content: '';
+  width: inherit;
+  height: 42%;
+  position: absolute;
+  bottom: -25%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, .9),rgba(116, 186, 207, 0.5));
+  z-index: 1;
+}
+
+.img1 {
+  background-image: url(images/Tim.jpg);
+}
+
+.img2 {
+  background-image: url(https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+
+.img3 {
+  background-image: url(https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+
+.img4 {
+  background-image: url(https://images.unsplash.com/photo-1549488235-42996ae3b650?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+    </style>
+</head>
+<body>
+    
+    
+    <div>
+    <h1 style="display:inline-block">Timothy Reid|</h1>
+    <p id="Nucamp" style="display: inline-block"><span  style="color: rgb(19, 105, 218);">Nu</span><span style="color: rgb(121, 18, 107);">camp</span></a> Grad<br/>Aspiring Full Stack Dev</p>
+    </div>
+    
+
+    
+
+    <div id="leftSide">
+        
+    </div>
+    <div id="rightSide">
+
+    </div>
+    <div class="images-selector">
+        <hidden type="radio" id="duck" name="image" value="duck">
+        <label for="duck" class="img-card img1"></label>
+        <hidden type="radio" id="dog" name="image" value="dog">
+        <label for="dog" class="img-card img2"></label>
+        <hidden type="radio" id="cat" name="image" value="cat">
+        <label for="cat" class="img-card img3"></label>
+        <hidden type="radio" id="cow" name="image" value="cow">
+        <label for="cow" class="img-card img4"></label>
+      </div>
+    
+</body>
+</html>
